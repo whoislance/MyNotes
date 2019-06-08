@@ -17,6 +17,8 @@
 - [ ] [CS231n: Convolutional Neural Networks for Visual Recognition](<http://cs231n.stanford.edu/>)
 
   Notes: <http://cs231n.github.io/>
+  
+  Video: https://study.163.com/course/courseMain.htm?courseId=1003223001
 
   
 
