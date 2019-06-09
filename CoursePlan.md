@@ -17,8 +17,10 @@
 - [ ] [CS231n: Convolutional Neural Networks for Visual Recognition](<http://cs231n.stanford.edu/>)
 
   Notes: <http://cs231n.github.io/>
-  
+
   Video: https://study.163.com/course/courseMain.htm?courseId=1003223001
+
+  Video-2017: <https://www.youtube.com/watch?v=vT1JzLTH4G4&list=PLa-Bt050gYuhEeLRG8YBmFxwLvTJ5FqPS>
 
   
 
@@ -32,14 +34,12 @@
 
   Schedule: <http://web.stanford.edu/class/cs224n/index.html#schedule>
 
-  
 - [ ] [CS230: Deep Learning](http://cs230.stanford.edu/)
 
   Syllabus: http://cs230.stanford.edu/syllabus/
   
   Video: https://www.bilibili.com/video/av47055599
   
-
 - [ ] [Deeplearning.ai](<https://www.deeplearning.ai/>)
 
   Course: <https://www.deeplearning.ai/deep-learning-specialization/>
