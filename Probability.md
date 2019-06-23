@@ -425,3 +425,286 @@
 
 ### 3.1 多维随机变量及其联合分布
 
+- 联合分布函数
+
+  对任一的n个实数$x_1,...x_n$，则n个事件$\{X_1\le x_1\},...,\{X_n\le x_n\}$同时发生的概率
+  $$
+  F(x_1,...x_n)=P(X_1\le x_1,...,X_n\le x_n)
+  $$
+  称为n维随机变量$(X_1,...X_n)$的联合分布函数
+
+  - 性质
+    1. 单调性：对x，y是单调非减的
+    2. 有界性：$0\le F(x,y) \le 1$
+    3. 右连续性
+    4. 非负性：$P(a<X\le b,c<Y\le d)=F(b,d)-F(a,d)-F(b,c)+F(a,c)\ge 0$
+
+- 联合分布列
+
+  $p_{ij}=P(X=x_i,Y=y_i)$为$(X,Y)$的联合分布列，可用表格形式表示。
+
+  $Sum(p_{ij})=1$
+
+- 联合密度函数
+  $$
+  F(x,y)=\int_{-\infin}^x\int_{-\infin}^yp(u,v)dvdu
+  $$
+  称$p(u,v)$为$(X,Y)$的联合密度函数
+  $$
+  p(x,y)=\frac{\partial^2}{\partial x\partial y}F(x,y)
+  $$
+  $\int_{-\infin}^\infin\int_{-\infin}^\infin p(x,y)dydx=1$
+
+- 常用多维分布
+
+  - 多项分布
+
+    n次重复试验（有放回），每个结果$A_i$出现的次数为$n_i$，则
+    $$
+    P(X_1=n_1,...,X_r=n_r)=\frac{n!}{n_1!...n_r!}p_1^{n_1}...p_r^{n_r}
+    $$
+
+  - 多维超几何分布
+
+    n次试验（无放回）
+    $$
+    P(X_1=n_1,...,X_r=n_r)=\frac{({N_1 \choose n_1})...({N_r \choose n_r})}{{N \choose n}}
+    $$
+
+  - 多维均匀分布
+    $$
+    p(x_1,...x_n)=\frac{1}{S_D},D是一个有界区域，S_D是其面积或体积
+    $$
+    服从D上的多维均匀分布
+
+  - 二元正态分布
+
+    $(X,Y)\sim N(\mu_1,\mu_2,\sigma_1,\sigma_2,\rho)$
+
+    其中$\rho$是X与Y的相关系数
+
+### 3.2 边际分布与随机变量的独立性
+
+- 边际分布函数
+  $$
+  F_X(x)=\lim_{y\rightarrow \infin}F(x,y)=F(x,\infin)
+  $$
+
+- 边际分布列
+  $$
+  P(X-x_i)=\sum_{j=1}^\infin P(X=x_i,Y=y_i)
+  $$
+
+- 边际密度函数
+  $$
+  p_X(x)=\int_{-\infin}^{\infin}p(x,y)dy
+  $$
+
+  1. 多项分布的一维边际分布仍为二项分布
+  2. 二维正态分布的边际分布为一维正态分布
+
+- 随机变量间的独立性
+
+  如果$F_i(x_i)$是$X_i$的边际分布函数，有$F(x_1,...x_n)=\prod_{i=1}^nF_i(x_i)$
+
+  则称$X_1,...X_n$相互独立
+
+  - 离散随机变量
+
+    $P(X_1=x_1,...X_n=x_n)=\prod P(X_i=x_i)$
+
+  - 连续随机变量
+
+    $p(x_1,...x_n)=\prod p_i(x_i)$
+
+### 3.3 多维随机变量函数的分布
+
+- 离散随机变量
+
+  - **泊松分布**的可加性
+
+    设$X\sim P(\lambda_1)$,$Y\sim P(\lambda_2)$, $Z=X+Y\sim P(\lambda_1+\lambda_2)$
+
+    即泊松分布的卷积仍为泊松分布，记为$P(\lambda_1)*P(\lambda_2)=P(\lambda_1+\lambda_2)$
+
+  - **二项分布**的可加性
+
+    设$X\sim b(n,p)$,$Y\sim b(m,p)$, $Z=X+Y\sim b(n+m,p)$
+
+    所以服从二项分布$b(n,p)$的随机变量可以分解成n个互相独立的0-1分布的随机变量之和。
+
+  - **最大值**分布
+
+    $Y=\max\{X_1,...X_n\}$
+
+    若$X_i\sim F_i(x)$，则$F_Y(y)=\prod_{i=1}^n F_i(y)$
+
+    若$X_i\sim F(x)$，则$F_Y(y)= [F_i(y)]^n$，$p_Y(y)=F^{'}_Y(y)=n[F_i(y)]^{n-1}p(y)$
+
+  - **最小值**分布
+
+    $Y=\min\{X_1,...X_n\}$
+
+    若$X_i\sim F_i(x)$，则$F_Y(y)=1-\prod_{i=1}^n[1 - F_i(y)]$
+
+    若$X_i\sim F(x)$，则$F_Y(y)= 1-[1-F_i(y)]^n$，$p_Y(y)=F^{'}_Y(y)=n[1-F_i(y)]^{n-1}p(y)$
+
+- 连续场合的卷积公式
+
+  X,Y是两个相互独立的连续随机变量，密度函数分布是$p_X(x),p_Y(y)$,则$Z=X+Y$的密度函数为
+
+  $p_Z(z)=\int_{-\infin}^\infin p_X(z-y)p_Y(y)dy$
+
+  or $p_Z(z)=\int_{-\infin}^\infin p_X(x)p_Y(z-x)dy$
+
+  - **正态分布**的可加性
+
+    两个独立的正态变量之和仍为正态变量
+
+    $N(\mu_1,\sigma_1^2)*N(\mu_2,\sigma_2^2)=N(\mu_1+\mu_2,\sigma_1^2+\sigma_2^2)$
+
+  - **伽马分布**的可加性
+
+    两个尺度参数相同的独立的伽马变量之和仍为伽马变量
+
+    $Ga(\alpha_1,\lambda)*Ga(\alpha_2,\lambda)=Ga(\alpha_1+\alpha_2,\lambda)$
+
+    1. 特例：**指数分布** $Exp(\lambda)=Ga(1,\lambda)$
+
+       m个指数分布之和为伽马变量
+
+    2. 特例：**卡方分布** $\chi^2(n)=Ga(n/2,1/2)$
+
+       m个独立卡方变量之和为卡方变量
+
+       $X_1,...X_n$是n个标准正态变量，其平方和服从自由度为n的卡方分布
+
+- 变量变换法
+
+  - 变量变换法
+
+    如果二维随机变量(X,Y)的联合密度函数为P(x,y)，
+
+    $u=g_1(x,y),\ v=g_2(x,y)$
+
+    $x=x(u,v),\ y=y(u,v)$
+
+    雅可比行列式为：$J=\frac{\partial(x,y)}{\partial(u,v)}=\
+    \left|\begin{array}{cccc} 
+    \frac{\partial x}{\partial u} &    \frac{\partial y}{\partial u}    \\ 
+    \frac{\partial x}{\partial v} &    \frac{\partial y}{\partial v}  \end{array}\right| $
+
+    则(U,V)的联合密度函数为
+
+    $p(u,v)=p(x(u,v),y(u,v))|J|$
+
+  - 增补变量法
+
+    1. 积的公式
+
+       U=XY的密度函数为
+
+       $p_U(u)=\int_{-\infin}^\infin p_X(u/v)p_Y(v)\frac{1}{|v|}dv$
+
+    2. 商的公式
+
+       U=X/Y的密度函数为
+
+       $p_U(u)=\int_{-\infin}^\infin p_X(uv)p_Y(v)|v|dv$
+
+### 3.4 多维随机变量的特征数：协方差/相关系数
+
+- $Z=g(X,Y)$的期望
+
+  - 离散
+
+    联合分布列为$P(X=x_i,Y=y_i)$
+
+    则$E(Z)=\sum_i\sum_j g(x_i,y_j)P(X=x_i,Y=y_i)$
+
+  - 连续
+
+    联合密度函数$p(x,y)$
+
+    则$E(Z)=\int_{-\infin}^\infin\int_{-\infin}^\infin g(x,y)p(x,y)dxdy$
+
+- 期望与方差的运算性质
+
+  1. $E(X+Y)= E(X)+E(Y)$
+
+  2. $E(XY)=E(X)E(Y)$
+
+  3. 若$X$与$Y$不相关，则$Var(X\pm Y)=Var(X)+Var(Y)$
+
+     独立变量代数和的方差等于各方差之和，但对标准差不成立。
+
+     独立随机变量无论相加还是相减，方差只会增加不会减少。
+
+  4. 若$X$与$Y$取任意关系，则$Var(X\pm Y)=Var(X)+Var(Y)\pm 2Cov(X,Y)$
+
+- 协方差(相关中心矩)
+
+  描述两个分量见的相互关联程度。
+
+  $Cov(X,Y)=E[(X-E(X))(Y-E(Y))]$
+
+  $Cov(X,Y)=E(XY)-E(X)E(Y)$
+
+  特别有$Cov(X,X)=Var(X)$
+
+  1. $Cov(X,Y)>0$：正相关
+  2. $Cov(X,Y)<0$：负相关
+  3. $Cov(X,Y)=0$：不相关，要么毫无关联，要么存在非线性关系。
+
+  不相关与独立的关系：独立一定不相关；不相关不一定独立。
+
+  - 性质1：任意随机变量与常数的协方差为0.
+  - 性质2：$Cov(aX,bY)=abCov(X,Y)$
+  - 性质3：$Cov(X+Y,Z)=Cov(X,Z)+Cov(Y,Z)$
+
+- 相关系数
+
+  为了相除量纲的影响。
+
+  $(X,Y)$是一个二维随机变量，且$Var(X)=\sigma_X^2>0,Var(Y)=\sigma_Y^2>0$
+
+  则X与Y的线性相关系数：$Corr(X,Y)=\frac{Cov(X,Y)}{\sigma_X \sigma_Y}$
+
+  与协方差关系：是相应标准化变量的协方差
+
+  $Cov(\frac{X-\mu_X}{\sigma_X},\frac{Y-\mu_Y}{\sigma_Y})=Corr(X,Y)$
+
+  - 性质1：$|Corr(X,Y)|\le 1$
+
+  - 性质2：$Corr(X,Y)=\pm 1$的充要条件是
+
+    X与Y之间几乎处处有线性关系，即存在a与b使得$P(Y=aX+b)=1$
+
+  - 性质3：线性相关系数的大小刻画了线性关系的强弱，等于1时完全正相关，等于-1时完全负相关。
+
+- 期望向量与协方差矩阵
+
+  - 期望向量
+
+    n维随机变量为$X=(X_1,...X_n)^{'}$，期望向量为
+
+    $E(X)=(E(X_1),...E(X_N))^{'}$
+
+  - 协方差阵
+    $$
+    E[(X-E(X)(X-E(X))^{'}]=\left|\begin{array}{ccc} 
+    Var(X_1) &  ...  &  Cov(X_1,X_n) \\ 
+    ...&...&...\\
+    Cov(X_n,X_1)&   ... &Var(X_n) \end{array}\right|
+    $$
+    性质：n维随机变量的协方差阵是一个对称的非负定矩阵。
+
+  - n元正态分布
+
+    n维随机变量为$X=(X_1,...X_n)^{'}$的协方差阵为$B=Cov(X)$，期望向量为$a=(a_1,...a_n)^{'}$，记$x=(x_1,...x_n)^{'}$，则n元正态分布的密度函数为
+    $$
+    p(x)=\frac{1}{(2\pi)^{n/2}|B|^{1/2}}e^{-\frac{1}{2}(x-a)^{'}B^{-1}(x-a)}
+    $$
+
+### 3.5 条件分布与条件期望
+
