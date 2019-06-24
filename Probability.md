@@ -708,3 +708,99 @@
 
 ### 3.5 条件分布与条件期望
 
+- 条件分布
+
+  - 离散
+
+    - 条件分布列
+      $$
+      p_{i|j}=P(X=x_i|Y=y_i)=\frac{P(X=x_i,Y=y_i)}{P(Y=y_i)}=\frac{p_{ij}}{p_{*j}}
+      $$
+      其中$P(Y=y_j)=p_{*j}=\sum_{i=1}^\infin p_{ij}$
+
+    - 条件分布函数
+      $$
+      F(x|y_j)=\sum_{x_i\le x}P(X=x_i|Y=y_i)=\sum_{x_i\le x}p_{i|j}
+      $$
+
+  - 连续
+
+    - 条件分布函数
+      $$
+      F(x|y)=\int_{-\infin}^\infin \frac{p(u,y)}{p_Y(y)}du
+      $$
+
+    - 条件密度函数
+      $$
+      p(x|y)=\frac{p(x,y)}{p_Y(y)}
+      $$
+      可改写为$p(x,y)=p_Y(y)p(x|y)$
+
+      二维正态分布的边际分布和条件分布都是一维正态分布.
+
+    - 全概率公式的密度函数
+      $$
+      p_Y(y)=\int_{-\infin}^\infin p_X(x)p(y|x)dx
+      $$
+
+    - 贝叶斯公式的密度函数
+      $$
+      p(x|y)=\frac{p_X(x)p(y|x)}{\int_{-\infin}^\infin p_X(x)p(y|x)dx}
+      $$
+
+- 条件数学期望
+
+  - 二维离散
+
+    $E(X|Y=y)=\sum_ix_iP(X=x_i|Y=y)$
+
+  - 二维连续
+
+    $\int_{-\infin}^\infin xp(x|y)dx$
+
+  - 记法
+
+    - E(X|Y=y)是y的函数,我们可以记$g(y)=E(X|Y=y)$
+    - 进一步可记$g(Y)=E(X|Y)$,$E(X|Y)$本身也是随机变量
+
+  - 重期望公式
+
+    $E(X)=E(E(X|Y))$
+
+    - 离散: $E(X)=\sum_jE(X|Y=y_j)P(Y=y_i)$
+    - 连续: $E(X)=\int_{-\infin}^\infin E(X|Y=y)p_Y(y)dy$
+
+  - 随机个随机变量和的数学期望
+
+    设$X_1,X_2...$为一列独立同分布的随机变量, 随机变量N只取正整数值, 且N与{$X_n$}独立, 则
+
+    $E(\sum_{i=1}^NX_i)=E(X_1)E(N)$
+
+
+
+# 第四章 大数定律与中心极限定理
+
+### 4.1 随机变量序列的	收敛性
+
+- 依**概率**收敛: 用于大数定律
+
+  设{$X_n$}为一随机变量序列, X为一随机变量,如果对任一的$\epsilon<0$, 有
+
+  $P(|X_n-X)<\epsilon)\rightarrow 1(n\rightarrow \infin)$
+
+  则称序列{$X_n$}依概率收敛于X, 记作$X_n\rightarrow X$
+
+  含义:绝对偏差$|X_n-X|$小于任一给定量的可能性将随着n增大而越来越接近于1
+
+  当$P(X=c)=1$时, $X_n\rightarrow c$
+
+- 按**分布**收敛: 用于中心极限定理
+
+  设随机变量$X,X_1,...$的分布函数分别为$F(x),F_1(x)...$, 若对F(x)的任一连续点,都有
+
+  $\lim_{n\rightarrow\infin}F_n(x)=F(x)$
+
+  则称{$F_n(x)$}弱收敛于$F(x)$, 记作$F_n(x)\rightarrow F(x)$ or $X_n \rightarrow X$
+
+### 4.2 特征函数
+
