@@ -983,8 +983,162 @@ $$
   $$
   当n相当大时,经验分布函数是总体分布函数$F(x)$的一个良好的近似.
 
-### 5.3 统计量及其分布
+### 5.3 统计量及其分布 
+
+- 抽样分布
+
+  设$x_1,x_2,...x_n$是来自某个总体的样本, $\bar{x}$是样本均值, 若总体分布为$N(\mu,\sigma^2)$, 则
+
+  $\bar{x}$的精确分布为$N(\mu,\sigma^2/n)$
+
+- 样本方差与样本标准差
+
+  - 样本方差(无偏方差)
+
+    在n不大时, 常用$s^2=\frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})^2$
+
+  - 样本标准差
+
+    $s=\sqrt{s^2}$
+
+  - 偏差平方和
+
+    $\sum_{i=1}^n(x_i-\bar{x})^2=\sum x_i^2-\frac{(\sum x_i)^2}{n}=\sum x_i^2-n\bar{x}^2$
+
+  - 偏差平方的自由度$n-1$
+
+    含义: 在$\bar{x}$确定后, n个偏差中只有n-1个可以自由变动, 而第n个则不能自由取值.
+
+  - 定理
+
+    设总体X具有二阶矩, 即$E(X)=\mu, Var(X)=\sigma^2<\infin$, $x_1,...,x_n$为从总体得到的样本,则
+
+    $E(\bar{x})=\mu, Var(\bar{x})=\sigma^2/n, E(s^2)=\sigma^2$
+
+- 样本矩及其函数
+
+  - k阶原点矩
+
+    $a_k=\frac{1}{n}\sum_{i=1}^n x_i^k$
+
+    样本均值: 样本一阶原点矩
+
+  - k阶中心矩
+
+    $b_k=\frac{1}{n}\sum_{i=1}^n (x_i-\bar{x})^k$
+
+    样本方差: 样本二阶中心矩
+
+  - 样本偏度
+
+    $\hat{\beta_s}=\frac{b_3}{b_2^{3/2}}$
+
+    反映了样本数据与对称性偏离程度和偏离方向
+
+  - 样本峰度
+
+    $\hat{\beta_k}=\frac{b4}{b_2^2}-3$
+
+    $\hat{\beta_k}>>0$: 尖顶型
+
+    $\hat{\beta_k}<<0$: 平顶型
+
+- 次序统计量
+
+  - 单个次序统计量
+
+    总体X的密度函数为p(x), 分布函数为F(x), 则第k个次序统计量$x_{(k)}$的密度函数为
+
+    $p_k(x)=\frac{n!}{(k-1)!(n-k)!}(F(x))^{k-1}(1-F(x))^{n-k}p(x)$
+
+  - 多个次序统计量
+
+    次序统计量$(x_{(i)},x_{(j)})$(i<j)的联合分布密度函数为
+
+    $p_{ij}(y,z)=\frac{n!}{(i-1)!(j-i-1)!(n-j)!}[F(y)^{i-1}][F(z)-F(y)]^{j-i-1}[1-F(z)]^{n-j}p(y)p(z)$
+
+  - 样本极差
+
+    $R_n=x_{(n)}-x_{(1)}$
+
+- 样本分位数与中位数
+
+  - 中位数
+    $$
+    m_{0.5}=\begin{equation}  
+    \left\{  
+                 \begin{array}{**lr**}  
+                 x_{(\frac{n+1}{2})} & n为奇数\\  
+                 \frac{1}{2}(x_{(\frac{n}{2})}+x_{(\frac{n}{2}+1)})& n为偶数\\  
+                 \end{array}  
+    \right.  
+    \end{equation}  
+    $$
+
+  - p分位数
+    $$
+    m_{p}=\begin{equation}  
+    \left\{  
+                 \begin{array}{**lr**}  
+                 x_{[np+1])} & np不是整数\\  
+                 \frac{1}{2}(x_{(np)}+x_{(np+1)})& np是整数\\  
+                 \end{array}  
+    \right.  
+    \end{equation}  
+    $$
+    当$n\rightarrow\infin$时, p分位数的渐进分布是
+    $$
+    m_p\sim N(x_p,\frac{p(1-p)}{np^2(x_p)})
+    $$
+
+### 5.4 三大抽样分布
+
+[*三大抽样分布*:卡方分布,t分布和F分布的简单理解](https://www.baidu.com/link?url=57aywD0Q6WTnl7XKbIHuE7lcWGXh50Vy3z1lItKlmdAUkrVVxJo8WsaylEN5xRxQbxqY2uHxWIYp7UW2oc9hYg26z3yxFDDyFxMdMVmifjC&wd=&eqid=dbe5cd2a000f3278000000035d130bdd)
+
+- 卡方分布
+
+  设$X_1,...X_n$独立同分布与标准正态分布$N(0,1)$, 则$\chi^2=X_1^2+...+X_n^2$的分布称为自由度为n的$\chi^2$分布, 记为$\chi^2\sim\chi^2(n)$
+
+- F分布
+
+  设随机变量$X1\sim\chi^2(m), X_2\sim\chi^2(m)$, $X_1$与$X_2$独立, 则称$F=\frac{X_1/m}{X_2/m}$的分布是自由度为m与n的F分布, 记为$F\sim F(m,n)$, 其中m为分子自由度, n为分母自由度.
+
+- t分布
+
+  设随机变量$X_1$与$X_2$独立且$X_1\sim N(0,1),X_2\sim \chi^2(n)$, 则称$t=\frac{X_1}{\sqrt{X_2/n}}$的分布为自由度为n的t分布, 记为$t\sim t(n)$
+
+![1561529662310](assets/1561529662310.png)
+
+### 5.5 充分统计量
+
+- 定义
+
+  设$x_1,...x_n$是来自某个总体的样本, 总体分布函数为$F(x;\theta)$, 统计量$T=T(x_1,...,x_n)$称为$\theta$的充分统计量.
+
+  如果在给定T的取值后, $x_1,...x_n$的条件分布与$\theta$无关.
+
+- 因子分解定理
+
+  设总体概率函数为$F(x;\theta)$, $x_1,...x_n$是样本,  则$T=T(x_1,...,X_n)$为充分统计量的充要条件是:
+
+  存在两个函数$g(t,\theta)$和$h(x_1,...x_n)$使得对任意的$\theta$和任一组观测值$x_1,...x_n$, 有
+
+  $f(x_1,...x_n;\theta)=g(T(x_1,...x_n),\theta)h(x_1,...,x_n)$
+
+  其中$g(t,\theta)$是通过统计量T的取值而依赖于样本的.
 
 
+
+# 第六章 参数估计
+
+### 6.1 点估计的概念与无偏性
+
+- 无偏性
+
+  设$\hat{\theta}=\hat{\theta}(x_1,...,x_n)$是$\theta$的一个估计, $\theta$的参数空间为$\Theta$, 若对任意的$\theta\in\Theta$, 有
+
+  $E_{\theta}(\hat{\theta})=theta$, 则称$\hat{\theta}$是$\theta$的无偏估计.
+
+  
 
   
