@@ -1139,6 +1139,44 @@ $$
 
   $E_{\theta}(\hat{\theta})=theta$, 则称$\hat{\theta}$是$\theta$的无偏估计.
 
-  
+- 有效性
+
+  设$\hat{\theta_1}$,$\hat{\theta_2}$是$\theta$的两个无偏估计, 如果对任意的$\theta\in\Theta$有
+
+  $Var(\hat{\theta_1})\le Var(\hat{\theta_2})$, 且至少有一个$\theta\in\Theta$使得上述不等号严格成立,
+
+  则称$\hat{\theta_1}$比$\hat{\theta_2}$有效.
+
+### 6.2 矩估计及相合性
+
+- 矩估计
+
+  用样本矩去替换总体矩, 用经验分布函数去替换总体分布.
+
+  其理论基础是格里文科定理.
+
+- 相合性
+
+  随着样本量的不断增大, 经验分布函数逼近真实分布函数, 因此完全可以要求估计量随着样本量的不断增大而逼近参数真值.
+
+  - 定义
+
+    设$\theta\in\Theta$为未知参数, $\hat{\theta_n}=\hat{\theta_n}(x_1,...x_n)$是$\theta$的一个估计量, n是样本容量, 若对任何一个$\epsilon>0$, 有
+
+    $\lim_{n\rightarrow\infin}P(|\hat{\theta_n}-\theta|\ge\epsilon)=0$
+
+    则称$\hat{\theta_n}$为参数$\theta$的相合估计.
+
+  - 定理
+
+    设 $\hat{\theta_n}=\hat{\theta_n}(x_1,...x_n)$是$\theta$的一个估计量, 若$lim_{n\rightarrow\infin}E(\hat{\theta_n})=\theta$, $\lim_{n\rightarrow\infin}Var(\hat{\theta_n})=0$,
+
+    则$\hat{\theta_n}$是$\theta$的相合估计
+
+### 6.3 最大似然估计与EM算法
+
+
+
+​    
 
   
