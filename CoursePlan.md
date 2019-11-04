@@ -18,12 +18,16 @@
 
   Notes: <http://cs231n.github.io/>
 
+  Video: https://www.youtube.com/playlist?list=PLC1qU-LWwrF64f4QKQT-Vg5Wr4qEE1Zxk
+
   Video: https://study.163.com/course/courseMain.htm?courseId=1003223001
-
-  Video-2017: <https://www.youtube.com/watch?v=vT1JzLTH4G4&list=PLa-Bt050gYuhEeLRG8YBmFxwLvTJ5FqPS>
-
   
-
+  Video-2017: <https://www.youtube.com/watch?v=vT1JzLTH4G4&list=PLa-Bt050gYuhEeLRG8YBmFxwLvTJ5FqPS>
+  
+  HW-code: https://github.com/Burton2000/CS231n-2017
+  
+  
+  
 - [ ] [FDU: NLP Beginning Projects](<https://github.com/FudanNLP/nlp-beginner>)
 
   Book: <https://nndl.github.io/>
@@ -37,9 +41,9 @@
 - [ ] [CS230: Deep Learning](http://cs230.stanford.edu/)
 
   Syllabus: http://cs230.stanford.edu/syllabus/
-  
+
   Video: https://www.bilibili.com/video/av47055599
-  
+
 - [ ] [Deeplearning.ai](<https://www.deeplearning.ai/>)
 
   Course: <https://www.deeplearning.ai/deep-learning-specialization/>
