@@ -1175,4 +1175,38 @@ $$
 
 ### 6.3 最大似然估计与EM算法
 
-  
+- 最大似然估计
+
+  - 似然函数$L(\theta)$
+
+    设总体的概率函数为$p(x;\theta)$, $\theta\in \Theta$, 其中$\theta$是一个未知参数组成的参数向量, $x_1,...x_n$是来自该总体的样本, 将样本的联合概率密度看成$\theta$的函数, 称为样本的似然函数
+
+    $L(\theta)=L(\theta;x_1,x_2,...,x_n)=p(x_1;\theta)p(x_2;\theta)...p(x_n;\theta)$
+
+    也可定义为$\ln L(\theta)$
+
+  - 最大似然估计$MLE$$(maximum likelihood estimate)$
+
+    如果某统计量$\hat{\theta}=\hat{\theta}(x_1,...x_n)$满足$L(\hat{\theta})=\max_{\theta\in\Theta}L(\theta)$
+
+    则称$\hat{\theta}$是$\theta$的最大似然估计
+
+    - 最大似然估计的不变性
+
+      如果$\hat{\theta}$是$\theta$的最大似然估计,则对任意一函数$g(\theta)$, 其最大似然估计为$g(\hat{\theta})$.
+
+- EM算法
+
+  - 思路
+
+    Expectation: 第一步求期望,以便把多余的部分去掉
+
+    Maximization: 第二步求极大值得到MLE
+
+  - 算法
+
+    ![1562505923097](assets/1562505923097.png)
+
+### 6.4 最小方差无偏估计
+
+- 均方误差
