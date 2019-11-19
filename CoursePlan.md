@@ -62,6 +62,10 @@
 - [ ] [CMU 15-445: DataBase System](<https://15445.courses.cs.cmu.edu/fall2018/>)
 
   Schedule: <https://15445.courses.cs.cmu.edu/fall2018/schedule.html>
+  
+  Book:  https://www.db-book.com/db6/index.html 
+  
+  Youtube:  https://www.youtube.com/playlist?list=PLSE8ODhjZXja3hgmuwhf89qboV1kOxMx7 
 
 
 
