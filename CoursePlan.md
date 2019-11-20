@@ -38,11 +38,19 @@
 
   Schedule: <http://web.stanford.edu/class/cs224n/index.html#schedule>
 
+  Videos:  https://www.bilibili.com/video/av46216519 
+
+  Syllabus:  https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1174/syllabus.html 
+
+  
+
 - [ ] [CS230: Deep Learning](http://cs230.stanford.edu/)
 
   Syllabus: http://cs230.stanford.edu/syllabus/
 
   Video: https://www.bilibili.com/video/av47055599
+
+  
 
 - [ ] [Deeplearning.ai](<https://www.deeplearning.ai/>)
 
