@@ -38,7 +38,9 @@
 
   Schedule: <http://web.stanford.edu/class/cs224n/index.html#schedule>
 
-  Videos:  https://www.bilibili.com/video/av46216519 
+  Videos:  en https://www.bilibili.com/video/av46216519 
+
+  ​               zh https://www.bilibili.com/video/av61620135?from=search&seid=15961094567499911569
 
   Syllabus:  https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1174/syllabus.html 
 
