@@ -96,3 +96,25 @@
   Schedule： <https://pdos.csail.mit.edu/6.824/schedule.html>
 
 
+
+# project
+
+## 推荐系统
+
+https://zhuanlan.zhihu.com/p/34004488
+
+**1、[LibRec](https://link.zhihu.com/?target=https%3A//github.com/guoguibing/librec)**
+
+java版本开源推荐系统，包含了70多种经典的推荐算法。
+
+**2、[Surprise](https://link.zhihu.com/?target=http%3A//surpriselib.com/)**
+
+python版本开源推荐系统，包含了多种经典的推荐算法。
+
+**3、[LibMF](https://link.zhihu.com/?target=https%3A//www.csie.ntu.edu.tw/~cjlin/libmf/)**
+
+c++版本开源推荐系统，主要实现了基于矩阵分解的推荐算法。
+
+**4、[Neural Collaborative Filtering](https://link.zhihu.com/?target=https%3A//github.com/hexiangnan/neural_collaborative_filtering)**
+
+python实现神经协同过滤推荐算法。
