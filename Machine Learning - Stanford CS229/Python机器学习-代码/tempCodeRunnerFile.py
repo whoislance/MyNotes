@@ -1,0 +1,1 @@
+export PATH=/home/yule/anaconda3/bin:$PATH
